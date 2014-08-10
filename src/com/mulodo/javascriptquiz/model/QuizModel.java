@@ -31,8 +31,9 @@ public class QuizModel {
             Resources res = context.getResources();
             InputStream is = res.openRawResource(R.raw.quiz);
             InputStreamReader isreader = new InputStreamReader(is, "UTF-8");
-            CSVReader csvreader = new CSVReader(isreader, ',', CSVParser.DEFAULT_QUOTE_CHARACTER, 1);
-            String[] csv ;
+            CSVReader csvreader = new CSVReader(isreader, ',',
+                    CSVParser.DEFAULT_QUOTE_CHARACTER, 1);
+            String[] csv;
             while ((csv = csvreader.readNext()) != null) {
                 Log.v("app", csv[0]);
 
@@ -46,7 +47,7 @@ public class QuizModel {
                 for (int i = 0; i < num; ++i) {
                     l.add(csv[i + 5]);
 
-                    Log.v("app", csv[i+5]);
+                    Log.v("app", csv[i + 5]);
                 }
                 choises.add(l);
             }

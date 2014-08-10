@@ -21,7 +21,7 @@ public class QuizApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Log.v("app", "onCreate");
+        Log.v("jsq", "onCreate");
 
         quiz = new QuizModel();
         quiz.init(getApplicationContext());

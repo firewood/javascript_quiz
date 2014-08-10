@@ -39,21 +39,8 @@ public class ResultActivity extends Activity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.v("jq_main", "onActivityResult " + resultCode);
-
-        int choice = -1;
-        switch (resultCode) {
-        case R.id.button1:
-            choice = 0;
-            break;
-        case R.id.button2:
-            choice = 1;
-            break;
-        case R.id.button3:
-            choice = 2;
-            break;
-        }
+    protected void onActivityResult(int requestCode, int choice, Intent data) {
+        Log.v("jsq", "onActivityResult " + choice);
 
         QuizApplication app = (QuizApplication) this.getApplication();
         int sequence = app.getSequence();
@@ -62,8 +49,8 @@ public class ResultActivity extends Activity {
         app.setSequence(sequence);
 
         /*
-         * Log.v("choice", "CHOICE"); int i; for (i = 0; i < sequence; ++i) {
-         * Log.v("choice", Integer.toString(answer[i])); }
+         * Log.v("jsq", "CHOICE"); int i; for (i = 0; i < sequence; ++i) {
+         * Log.v("jsq", Integer.toString(answer[i])); }
          */
 
         if (sequence < 3) {
@@ -75,17 +62,17 @@ public class ResultActivity extends Activity {
             int c = 0;
             int score = 0;
             int f = 0;
-            if (answer[0] == 1) {
+            if (answer[0] == 2) {
                 ++c;
                 score += 30;
                 f |= 1;
             }
-            if (answer[1] == 1) {
+            if (answer[1] == 2) {
                 ++c;
                 score += 40;
                 f |= 2;
             }
-            if (answer[2] == 1) {
+            if (answer[2] == 2) {
                 ++c;
                 score += 30;
                 f |= 4;

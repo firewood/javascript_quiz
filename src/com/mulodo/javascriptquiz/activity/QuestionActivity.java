@@ -1,26 +1,37 @@
 package com.mulodo.javascriptquiz.activity;
 
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.mulodo.javascriptquiz.R;
 import com.mulodo.javascriptquiz.model.QuizApplication;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Color;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class QuestionActivity extends Activity {
+
+    private MediaPlayer mp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        QuizApplication app = (QuizApplication) this.getApplication();
+        QuizApplication app = (QuizApplication) getApplication();
         int sequence = app.getSequence();
         String question = app.quiz.getQuestion(sequence);
         ArrayList<String> choises = app.quiz.getChoises(sequence);
@@ -51,14 +62,73 @@ public class QuestionActivity extends Activity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setResult(v.getId());
-                finish();
+                int choice = 0;
+                switch (v.getId()) {
+                case R.id.button1:
+                    choice = 1;
+                    break;
+                case R.id.button2:
+                    choice = 2;
+                    break;
+                case R.id.button3:
+                    choice = 3;
+                    break;
+                }
+                setResult(choice);
+
+                QuizApplication app = (QuizApplication) getApplication();
+                int sequence = app.getSequence();
+                int answer = app.quiz.getAnswer(sequence);
+
+                int wait;
+                if (choice == answer) {
+                    wait = 1000;
+                    playSound(R.raw.seikai02_2);
+                } else {
+                    showCorrectAnswer(answer);
+                    wait = 2000;
+                    playSound(R.raw.huseikai02_3);
+                }
+
+                Timer t = new Timer();
+                t.schedule(new TimerTask() {
+
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                }, wait);
             }
         };
 
         findViewById(R.id.button1).setOnClickListener(listener);
         findViewById(R.id.button2).setOnClickListener(listener);
         findViewById(R.id.button3).setOnClickListener(listener);
+    }
+
+    private void playSound(int r) {
+        mp = MediaPlayer.create(this, r);
+        mp.start();
+    }
+
+    private void showCorrectAnswer(int answer) {
+        int res = 0;
+        switch (answer) {
+        case 1:
+            res = R.id.button1;
+            break;
+        case 2:
+            res = R.id.button2;
+            break;
+        case 3:
+            res = R.id.button3;
+            break;
+        }
+
+        Button btn = (Button) findViewById(res);
+        btn.setTextColor(Color.RED);
+        btn.setTextSize(20);
+
     }
 
 }

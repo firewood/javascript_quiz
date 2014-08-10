@@ -3,7 +3,8 @@
 
     <string name="app_name">JavaScriptQuiz</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Welcome to JavaScript quiz</string>
+    <string name="hello_world">Welcome to\nJavaScript quiz</string>
     <string name="title_activity_sub">SubActivity</string>
+    <string name="title_activity_copyright">Credits</string>
 
 </resources>

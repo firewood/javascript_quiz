@@ -17,6 +17,7 @@ import au.com.bytecode.opencsv.CSVReader;
 public class QuizModel {
 
     private ArrayList<String> question = new ArrayList<String>();
+    private ArrayList<Integer> answer = new ArrayList<Integer>();
     private ArrayList<ArrayList<String>> choises = new ArrayList<ArrayList<String>>();
 
     public QuizModel() {
@@ -25,7 +26,7 @@ public class QuizModel {
 
     public void init(Context context) {
 
-        Log.v("app", "QuizModel::init");
+        Log.v("jsq", "QuizModel::init");
 
         try {
             Resources res = context.getResources();
@@ -39,7 +40,7 @@ public class QuizModel {
 
                 int seq = Integer.parseInt(csv[0]);
                 int points = Integer.parseInt(csv[1]);
-                int answer = Integer.parseInt(csv[2]);
+                answer.add(Integer.parseInt(csv[2]));
                 int num = Math.min(Integer.parseInt(csv[3]), csv.length - 5);
                 question.add(csv[4]);
 
@@ -63,6 +64,10 @@ public class QuizModel {
 
     public String getQuestion(int seq) {
         return question.get(seq);
+    }
+
+    public int getAnswer(int seq) {
+        return answer.get(seq);
     }
 
     public ArrayList<String> getChoises(int seq) {

@@ -30,6 +30,16 @@ public class MainActivity extends Activity {
                 startActivity(t);
             }
         });
+
+        Button btn2 = (Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent t = new Intent(getApplicationContext(),
+                        CopyrightActivity.class);
+                startActivity(t);
+            }
+        });
     }
 
     @Override

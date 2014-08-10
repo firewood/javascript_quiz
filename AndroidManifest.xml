@@ -30,8 +30,8 @@
         <activity android:name="com.mulodo.javascriptquiz.activity.ResultActivity" >
         </activity>
         <activity
-            android:name="com.mulodo.javascriptquiz.SubActivity"
-            android:label="@string/title_activity_sub" >
+            android:name="com.mulodo.javascriptquiz.activity.CopyrightActivity"
+            android:label="@string/title_activity_copyright" >
         </activity>
     </application>
 

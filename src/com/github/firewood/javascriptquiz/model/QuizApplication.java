@@ -1,4 +1,4 @@
-package com.mulodo.javascriptquiz.model;
+package com.github.firewood.javascriptquiz.model;
 
 import java.util.ArrayList;
 

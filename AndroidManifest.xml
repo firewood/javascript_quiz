@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mulodo.javascriptquiz"
+    package="com.github.firewood.javascriptquiz"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -9,13 +9,13 @@
         android:targetSdkVersion="14" />
 
     <application
-        android:name="com.mulodo.javascriptquiz.model.QuizApplication"
+        android:name="com.github.firewood.javascriptquiz.model.QuizApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.mulodo.javascriptquiz.activity.MainActivity"
+            android:name="com.github.firewood.javascriptquiz.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,14 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mulodo.javascriptquiz.activity.QuestionActivity" >
+        <activity android:name="com.github.firewood.javascriptquiz.activity.QuestionActivity" >
             <intent-filter>
             </intent-filter>
         </activity>
-        <activity android:name="com.mulodo.javascriptquiz.activity.ResultActivity" >
+        <activity android:name="com.github.firewood.javascriptquiz.activity.ResultActivity" >
         </activity>
         <activity
-            android:name="com.mulodo.javascriptquiz.activity.CopyrightActivity"
+            android:name="com.github.firewood.javascriptquiz.activity.CopyrightActivity"
             android:label="@string/title_activity_copyright" >
         </activity>
     </application>

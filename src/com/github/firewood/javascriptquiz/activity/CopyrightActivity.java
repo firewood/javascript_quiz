@@ -1,6 +1,6 @@
-package com.mulodo.javascriptquiz.activity;
+package com.github.firewood.javascriptquiz.activity;
 
-import com.mulodo.javascriptquiz.R;
+import com.github.firewood.javascriptquiz.R;
 
 import android.os.Bundle;
 import android.app.Activity;

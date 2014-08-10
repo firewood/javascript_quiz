@@ -1,12 +1,12 @@
-package com.mulodo.javascriptquiz.activity;
+package com.github.firewood.javascriptquiz.activity;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.mulodo.javascriptquiz.R;
-import com.mulodo.javascriptquiz.model.QuizApplication;
+import com.github.firewood.javascriptquiz.model.QuizApplication;
+import com.github.firewood.javascriptquiz.R;
 
 import android.app.Activity;
 import android.content.res.Resources;

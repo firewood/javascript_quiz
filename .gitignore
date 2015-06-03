@@ -4,6 +4,12 @@
 *.class
 bin/
 gen/
+build/
+.idea/workspace.xml
+.idea/libraries
+.idea/dictionaries
 local.properties
+.gradle
 .classpath
 .project
+.DS_Store

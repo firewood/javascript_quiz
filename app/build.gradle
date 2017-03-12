@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 14
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.github.firewood.javascriptquiz"
         minSdkVersion 14
-        targetSdkVersion 14
+        targetSdkVersion 22
     }
 
     buildTypes {

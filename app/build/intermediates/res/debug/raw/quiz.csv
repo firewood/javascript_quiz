@@ -1,4 +1,0 @@
-seq,pts,ans,num,q,a,b,c
-1,30,2,3,"  1 + \"2\"","3","\"12\"","undefined"
-1,40,2,3,"  typeof Object","\"object\"","\"function\"","SyntexError"
-1,30,2,3,"  NaN == NaN","true","false","undefined"

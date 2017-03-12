@@ -5,6 +5,7 @@
 bin/
 gen/
 build/
+app/build/
 .idea/workspace.xml
 .idea/libraries
 .idea/dictionaries
